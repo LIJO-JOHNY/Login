@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="text-center text-white center-div mt-5" id="main-container">
+        <div id="registration-container" class="container w-25 border rounded-top rounded-bottom border-dark py-5 mt-5" style="display: block;">
+            <h2>Registration</h2>
+            <form onsubmit="return validateRegistration()">
+                <input type="text" id="name" class="form-control mb-3" placeholder="Name">
+                <input type="email" id="email" class="form-control mb-3" placeholder="Email">
+                <input type="password" id="password" class="form-control mb-3" placeholder="Password">
+                <button type="submit" class="btn btn-success rounded-pill mt-2">Register</button>
+                <p>Already have an account? <a href="#login" onclick="showLogin()">Login here</a></p>
+            </form>
+        </div>
+
+        <div id="login-container" class="container w-25 border rounded-top rounded-bottom border-dark py-5 mt-5" style="display: none;">
+            <h2>Login</h2>
+            <form onsubmit="return login()">
+                <input type="email" id="login-email" class="form-control mb-3" placeholder="Email">
+                <input type="password" id="login-password" class="form-control mb-3" placeholder="Password">
+                <button type="submit" class="btn btn-success rounded-pill mt-2">Login</button>
+                <p>Don't have an account? <a href="#registration" onclick="showRegistration()">Register here</a></p>
+            </form>
+        </div>
+
+        <div id="welcome-container" class="container w-25 border rounded-top rounded-bottom border-dark py-5 mt-5" style="display: none;">
+            <h2>Welcome</h2>
+            <p>Welcome, <span id="user_name"></span>!</p>
+            <button class="btn btn-danger" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
